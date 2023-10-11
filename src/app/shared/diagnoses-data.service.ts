@@ -12,7 +12,7 @@ export class DiagnosesDataService {
 
   baseUrl = 'http://localhost:3000';
 
-  getDiagnoses(searchStr: string): Observable<Array<IDiagnosis>> {
-    return this.http.get<Array<IDiagnosis>>(`${this.baseUrl}/diagnoses?IsPublic=true&Search=${searchStr}`);
+  getDiagnoses(searchStr?: string): Observable<Array<IDiagnosis>> {
+    return this.http.get<Array<IDiagnosis>>(`${this.baseUrl}/diagnoses?IsPublic=true${searchStr ? '&Search=' + searchStr : ''}`);
   }
 }
