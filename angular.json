@@ -59,6 +59,11 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "diagnoses-form:build",
+            "proxyConfig": "proxy.conf.js",
+            "port": 4200
+         },
           "configurations": {
             "production": {
               "browserTarget": "diagnoses-form:build:production"

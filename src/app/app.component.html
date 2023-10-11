@@ -21,7 +21,7 @@
             <mat-form-field>
               <select matNativeControl formControlName="diagnosis">
                 <option></option>
-                <option *ngFor="let diagnosis of diagnosesList" [value]="diagnosis.id">{{diagnosis.name}}</option>
+                <option *ngFor="let diagnosis of diagnosesList" [value]="diagnosis.id">{{diagnosis.code}} {{diagnosis.name}}</option>
               </select>
             </mat-form-field>
 

@@ -10,9 +10,7 @@ export class DiagnosesDataService {
 
   constructor(private http: HttpClient) {};
 
-  baseUrl = 'http://localhost:3000';
-
   getDiagnoses(searchStr?: string): Observable<Array<IDiagnosis>> {
-    return this.http.get<Array<IDiagnosis>>(`${this.baseUrl}/diagnoses?IsPublic=true${searchStr ? '&Search=' + searchStr : ''}`);
+    return this.http.get<Array<IDiagnosis>>(`/Dictionaries/icpc2?IsPublic=true${searchStr ? '&Search=' + searchStr : ''}`);
   }
 }

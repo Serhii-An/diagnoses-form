@@ -12,6 +12,7 @@ export class AppComponent implements OnInit {
   constructor(private diagnosesDataService: DiagnosesDataService, private fb: FormBuilder) {}
   resultJSON: Object | null = null;
   diagnosesList: Array<IDiagnosis> = [];
+  searchParam: string = 'Ост';
   diagnosesForm: FormGroup = this.fb.group({
     date: new FormControl('', [Validators.required, this.dateValidator()]),
     diagnoses: this.fb.array([]),
@@ -38,7 +39,7 @@ export class AppComponent implements OnInit {
   ngOnInit() { 
     this.addDiagnosis();
 
-    this.diagnosesDataService.getDiagnoses('Ост').subscribe((data: Array<IDiagnosis>) => {
+    this.diagnosesDataService.getDiagnoses(this.searchParam).subscribe((data: Array<IDiagnosis>) => {
       this.diagnosesList = [...data];
     });
   }
