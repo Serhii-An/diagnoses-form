@@ -45,12 +45,11 @@ export class AppComponent implements OnInit {
   }
 
 
-  public onSubmit(): void {
+  public generateJSON(): void {
     this.resultJSON = JSON.stringify({
       "encounter": {
         "date" : this.diagnosesForm.controls.date.value.toISOString()
       },
-      
       "conditions": this.getConditionsArray()
     }, null, " ");
   }
