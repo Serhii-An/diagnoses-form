@@ -1,4 +1,4 @@
-var defaultTarget = 'https://global.lakmus.org/';
+let defaultTarget = 'https://global.lakmus.org/';
 module.exports = [
 {
    context: ['/Dictionaries/icpc2/**'],
